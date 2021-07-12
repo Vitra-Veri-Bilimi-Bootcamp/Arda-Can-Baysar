@@ -1,0 +1,20 @@
+def flatten(_2d_list):
+    flat_list = []
+    
+    for element in _2d_list:
+        if type(element) is list:
+            for item in element:
+                if type(item) is list:
+                    for it in item:
+                        if type(it) is list:
+                            for new in it:
+                                flat_list.append(new)
+                            
+                            
+                        else:
+                            flat_list.append(it)
+                else:
+                    flat_list.append(item)
+        else:
+            flat_list.append(element)
+    return flat_list
