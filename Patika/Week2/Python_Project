@@ -20,3 +20,26 @@ def flatten(my_list):
         else:
             flat_list.append(element)
     return flat_list
+
+Q2) Verilen listenin içindeki elemanları tersine döndüren bir fonksiyon yazın. Eğer listenin içindeki elemanlar da liste içeriyorsa onların elemanlarını da tersine döndürün
+
+def reverse_list(my_list):
+    reverse_list = []
+    
+    for element in reversed(my_list):
+        if type(element) is list:
+            for item in reversed(element):
+                if type(item) is list:
+                    for it in reversed(item):
+                        if type(it) is list:
+                            for new in reversed(it):
+                                reverse_list.append(new)
+                            
+                            
+                        else:
+                            reverse_list.append(it)
+                else:
+                    reverse_list.append(item)
+        else:
+            reverse_list.append(element)
+    return reverse_list
